@@ -9,3 +9,8 @@ get '/' do
   @contacts = Contact.all
   erb :index
 end
+
+get '/:id' do
+  @contacts = Contact.all
+  erb :show, locals: { id: params[:id] }
+end
